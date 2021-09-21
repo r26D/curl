@@ -7,10 +7,11 @@ LABEL "com.github.actions.color"="gray-dark"
 
 LABEL "repository"="https://github.com/r26d/wait-for-status-action"
 LABEL "homepage"="https://github.com/r26d/wait-for-status-action"
+LABEL "org.opencontainers.image.source" = "https://github.com/r26D/wait-for-status-action"
 
 RUN apk add --no-cache curl ca-certificates bash
 
-ADD *.sh /
+ADD entrypoint.sh /
 
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["--help"]

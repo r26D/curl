@@ -16,7 +16,7 @@ inputs:
 runs:
   using: 'docker'
   #image: 'Dockerfile'
-  image: "docker://ghcr.io/r26d/wait-for-status-action/wait-for-status-action:v0.1.4"
+  image: "docker://ghcr.io/r26d/wait-for-status-action/wait-for-status-action:v0.1.5"
   args:
     - ${{ inputs.url }}
     - ${{ inputs.statusCode}}
