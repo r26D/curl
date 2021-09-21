@@ -29,7 +29,6 @@ jobs:
 
 
 Based on Work by Wei
-## Author
 [Wei He](https://github.com/wei) _github@weispot.com_
 
 
