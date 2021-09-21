@@ -8,8 +8,8 @@ inputs:
     description: "This is where the helm command will be run from"
 runs:
   using: 'docker'
-  #image: 'Dockerfile'
-  image: "docker://ghcr.io/r26d/wait-for-status-action/wait-for-status-action:latest"
+  image: 'Dockerfile'
+   #image: "docker://ghcr.io/r26d/wait-for-status-action/wait-for-status-action:latest"
   args:
     - ${{ inputs.url }}
     - ${{ inputs.status_code}}
