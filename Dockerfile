@@ -1,15 +1,14 @@
-FROM alpine
+FROM alpine:3.14
 
-LABEL "com.github.actions.name"="Github Action for curl"
-LABEL "com.github.actions.description"="Wraps the curl CLI to be used in Github Actions"
+LABEL "com.github.actions.name"="Wait for Status Action"
+LABEL "com.github.actions.description"="Uses Curl to Fetch a URL until the correct status code is returned"
 LABEL "com.github.actions.icon"="download-cloud"
 LABEL "com.github.actions.color"="gray-dark"
 
-LABEL "repository"="http://github.com/wei/curl"
-LABEL "homepage"="http://github.com/wei/curl"
-LABEL "maintainer"="Wei He <github@weispot.com>"
+LABEL "repository"="https://github.com/r26d/wait-for-status-action"
+LABEL "homepage"="https://github.com/r26d/wait-for-status-action"
 
-RUN apk add --no-cache curl ca-certificates
+RUN apk add --no-cache curl ca-certificates bash
 
 ADD *.sh /
 

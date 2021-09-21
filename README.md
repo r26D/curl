@@ -1,63 +1,36 @@
-# GitHub Action for curl
+# GitHub Action - wait for status
 
-Wraps the curl CLI to be used in GitHub Actions. See also [GitHub Action for wget](https://github.com/marketplace/actions/github-action-for-wget).
-
-
-## Features
- * make http requests
- * http errors are treated as errors
-
+This hits a specific url on an interval until a specific status is the result
 
 ## Usage
 
+
+statusCode defaults to 200
+checkIntervalSeconds defaults to 10
+maxNumberOfChecks defaults to 60
 ### GitHub Actions
 ```
 on: push
 jobs:
-  curl:
+  process:
     runs-on: ubuntu-latest
     steps:
-    - name: curl
-      uses: wei/curl@master
+    - name: wait until https://www.cnn.com is up
+      uses: r26d/wait_for_status@v0.1.0
       with:
-        args: https://httpbin.org/get
-```
-
-```
-on: push
-jobs:
-  curl:
-    runs-on: ubuntu-latest
-    steps:
-    - name: curl
-      uses: wei/curl@v1
-      with:
-        args: -X POST https://httpbin.org/post
-```
-
-```
-on: push
-jobs:
-  curl:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@master
-    - name: curl
-      uses: wei/curl@v1
-      with:
-        args: --upload-file .github/workflows/main.yml https://transfer.sh/main-workflow.yml
-```
-
-### Docker
-```
-docker run --rm $(docker build -q .) \
-  https://httpbin.org/get
+	url: https://www.cnn.com
+	statusCode: 200 
+        checkIntervalSeconds: 10
+	maxNumberOfChecks: 60
 ```
 
 
+
+
+Based on Work by Wei
 ## Author
 [Wei He](https://github.com/wei) _github@weispot.com_
 
 
 ## License
-[MIT](https://wei.mit-license.org)
+MIT - r26D,LLC
