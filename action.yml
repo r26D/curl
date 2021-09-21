@@ -15,8 +15,8 @@ inputs:
     default: 60
 runs:
   using: 'docker'
-  #image: 'Dockerfile'
-  image: "docker://ghcr.io/r26d/wait-for-status-action/wait-for-status-action:v0.1.5"
+  image: 'Dockerfile'
+  #image: "docker://ghcr.io/r26d/wait-for-status-action/wait-for-status-action:v0.1.5"
   args:
     - ${{ inputs.url }}
     - ${{ inputs.statusCode}}
