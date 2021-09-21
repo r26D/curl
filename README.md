@@ -8,6 +8,7 @@ This hits a specific url on an interval until a specific status is the result
 statusCode defaults to 200
 checkIntervalSeconds defaults to 10
 maxNumberOfChecks defaults to 60
+
 ### GitHub Actions
 ```
 on: push
