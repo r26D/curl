@@ -23,6 +23,7 @@ fi
 
 CURRENT_STATUS_CODE=0
 NUMBER_OF_CHECKS=0
+echo "Checking status at url: ${URL}"
 
 while [ "$CURRENT_STATUS_CODE" != "$STATUS_CODE" ] && [  $MAX_NUMBER_OF_CHECKS -gt $NUMBER_OF_CHECKS ]; do
 	echo "Checking - status is ${CURRENT_STATUS_CODE}"
